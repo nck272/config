@@ -66,6 +66,9 @@ return {}
 --               },
 --             },
 --           },
+--           build = {
+--             sources = {},
+--           },
 --           project = {
 --             referencedLibraries = {
 --               "/opt/libs/com.cathay.sqlEditor_2.0.5.jar",

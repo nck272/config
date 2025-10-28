@@ -43,8 +43,8 @@ return {
       end)
       vim.keymap.set("n", "<space>fh", builtin.help_tags)
       vim.keymap.set("n", "<space>fg", require "multi-ripgrep")
+      vim.keymap.set("n", "<space>/", require "multi-ripgrep")
       vim.keymap.set("n", "<space>fb", builtin.buffers)
-      vim.keymap.set("n", "<space>/", builtin.current_buffer_fuzzy_find)
 
       vim.keymap.set("n", "<space>gw", builtin.grep_string)
 
