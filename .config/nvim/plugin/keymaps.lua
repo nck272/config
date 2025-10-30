@@ -1,4 +1,3 @@
-local k = vim.keycode
 local set = vim.keymap.set
 
 -- Basic movement keybinds, these make navigating splits easy for me
@@ -40,3 +39,18 @@ vim.api.nvim_set_keymap("n", ",t", "<Plug>PlenaryTestFile", { noremap = false, s
 
 vim.keymap.set("n", "]]", "<cmd>cnext<CR>", { silent = true })
 vim.keymap.set("n", "[[", "<cmd>cprev<CR>", { silent = true })
+
+-- Clear the search highlighting
+vim.keymap.set("n", "<esc>", vim.cmd.noh, { silent = true })
+
+-- Save the current file
+vim.api.nvim_buf_set_keymap(0, "i", "<C-k>", "lua vim.lsp.buf.signature_help()", { noremap = true, silent = true })
+
+vim.schedule(function()
+  set({ "n", "i", "v" }, "<C-s>", function()
+    if vim.lsp.buf.format then
+      pcall(vim.lsp.buf.format)
+    end
+    vim.cmd "write"
+  end, { noremap = true, silent = true, desc = "Format and save file" })
+end)

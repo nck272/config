@@ -50,7 +50,7 @@ return {
         -- Enabled biome formatting, turn off all the other ones generally
         biome = true,
         ts_ls = {
-		enabled = false,
+          enabled = false,
         },
         vtsls = {
           server_capabilities = {
@@ -107,7 +107,7 @@ return {
       }
 
       vim.list_extend(ensure_installed, servers_to_install)
-      require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+      require("mason-tool-installer").setup { ensure_installed = ensure_installed }
 
       -- Set global capabilities for all LSP servers
       vim.lsp.config("*", {
@@ -145,7 +145,7 @@ return {
             settings = {}
           end
 
-          local builtin = require("telescope.builtin")
+          local builtin = require "telescope.builtin"
 
           vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
           vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0 })
@@ -158,7 +158,7 @@ return {
           vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, { buffer = 0 })
           vim.keymap.set("n", "<space>wd", builtin.lsp_document_symbols, { buffer = 0 })
           vim.keymap.set("n", "<space>ww", function()
-            builtin.diagnostics({ root_dir = true })
+            builtin.diagnostics { root_dir = true }
           end, { buffer = 0 })
 
           local filetype = vim.bo[bufnr].filetype
@@ -183,14 +183,14 @@ return {
       require("custom.autoformat").setup()
 
       require("lsp_lines").setup()
-      vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
+      vim.diagnostic.config { virtual_text = true, virtual_lines = false }
 
       vim.keymap.set("", "<leader>l", function()
         local config = vim.diagnostic.config() or {}
         if config.virtual_text then
-          vim.diagnostic.config({ virtual_text = false, virtual_lines = true })
+          vim.diagnostic.config { virtual_text = false, virtual_lines = true }
         else
-          vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
+          vim.diagnostic.config { virtual_text = true, virtual_lines = false }
         end
       end, { desc = "Toggle lsp_lines" })
     end,
