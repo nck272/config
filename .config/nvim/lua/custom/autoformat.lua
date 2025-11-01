@@ -19,6 +19,7 @@ local setup = function()
       blade = { "blade-formatter" },
       ocaml = { "ml-format" },
       ocaml_mlx = { "ocamlformat_mlx" },
+      json = { "prettier" },
     },
   }
 
