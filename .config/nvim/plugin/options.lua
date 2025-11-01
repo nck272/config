@@ -54,3 +54,5 @@ vim.api.nvim_create_user_command("Unique", function()
 
   vim.api.nvim_buf_set_lines(0, start_line - 1, end_line, false, uniq)
 end, { range = true })
+
+vim.api.nvim_create_user_command("Present", require("custom.present").toggle, {})
