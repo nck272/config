@@ -24,11 +24,6 @@ local kind_formatter = lspkind.cmp_format {
   },
 }
 
--- Add tailwindcss-colorizer-cmp as a formatting source
-require("tailwindcss-colorizer-cmp").setup {
-  color_square_width = 2,
-}
-
 local cmp = require "cmp"
 
 cmp.setup {
@@ -38,15 +33,14 @@ cmp.setup {
       -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
       group_index = 0,
     },
-    -- { name = "supermaven" },
     { name = "nvim_lsp" },
     { name = "path" },
     { name = "buffer" },
   },
   mapping = {
-    ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-    ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
-    ["<C-y>"] = cmp.mapping(
+    ["<down>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+    ["<up>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+    ["<CR>"] = cmp.mapping(
       cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Insert,
         select = true,

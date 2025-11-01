@@ -32,6 +32,7 @@ opt.foldmethod = "manual"
 
 opt.title = true
 opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
+opt.winbar = "%{v:lua.CustomOilBar()}"
 
 opt.undofile = true
 

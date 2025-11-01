@@ -1,19 +1,18 @@
--- local treesitter = require "nvim-treesitter"
-
 local M = {}
 
 M.setup = function()
   local group = vim.api.nvim_create_augroup("custom-treesitter", { clear = true })
 
-  require("nvim-treesitter").setup({
+  require("nvim-treesitter").setup {
     ensure_install = {
       "core",
       "stable",
+      "comment",
       -- Elixir langs
       "elixir",
       "heex",
     },
-  })
+  }
 
   local syntax_on = {
     elixir = true,
@@ -41,7 +40,7 @@ M.setup = function()
     group = group,
     pattern = "TSUpdate",
     callback = function()
-      local parsers = require("nvim-treesitter.parsers")
+      local parsers = require "nvim-treesitter.parsers"
 
       parsers.cram = {
         tier = 0,
@@ -78,7 +77,5 @@ M.setup = function()
     end,
   })
 end
-
--- M.setup()
 
 return M

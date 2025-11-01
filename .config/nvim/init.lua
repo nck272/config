@@ -1,3 +1,4 @@
+-- TODO: MUST HAPPEN BEFORE ANYTHING ELSE
 vim.g.mapleader = "<space>"
 
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"

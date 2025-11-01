@@ -46,11 +46,11 @@ vim.keymap.set("n", "<esc>", vim.cmd.noh, { silent = true })
 -- Save the current file
 vim.api.nvim_buf_set_keymap(0, "i", "<C-k>", "lua vim.lsp.buf.signature_help()", { noremap = true, silent = true })
 
-vim.schedule(function()
-  set({ "n", "i", "v" }, "<C-s>", function()
-    if vim.lsp.buf.format then
-      pcall(vim.lsp.buf.format)
-    end
-    vim.cmd "write"
-  end, { noremap = true, silent = true, desc = "Format and save file" })
-end)
+-- vim.schedule(function()
+--   set({ "n", "i", "v" }, "<C-s>", function()
+--     if vim.lsp.buf.format then
+--       pcall(vim.lsp.buf.format)
+--     end
+--     vim.cmd "write"
+--   end, { noremap = true, silent = true, desc = "Format and save file" })
+-- end)
