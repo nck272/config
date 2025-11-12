@@ -4,19 +4,25 @@ M.setup = function()
   local group = vim.api.nvim_create_augroup("custom-treesitter", { clear = true })
 
   require("nvim-treesitter").setup {
-    ensure_install = {
-      "core",
-      "stable",
+    ensure_installed = {
+      "lua",
+      "javascript",
+      "vim",
       "comment",
-      -- Elixir langs
-      "elixir",
-      "heex",
+      "go",
+      "sql",
+    },
+    highlight = {
+      enable = true,
+      additional_vim_regex_highlighting = false,
     },
   }
 
   local syntax_on = {
     elixir = true,
     php = true,
+    go = true,
+    sql = true,
   }
 
   vim.api.nvim_create_autocmd("FileType", {

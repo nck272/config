@@ -43,12 +43,11 @@ return {
 
       local servers = {
         bashls = true,
-        lua_ls = {
-          cmd = { "lua-language-server" },
-        },
+        lua_ls = true,
         rust_analyzer = true,
-        -- Enabled biome formatting, turn off all the other ones generally
-        biome = true,
+        gopls = true,
+        ruff = true,
+        pyright = true,
         ts_ls = {
           enabled = false,
         },
@@ -68,13 +67,11 @@ return {
             },
           },
         },
-
         cssls = {
           server_capabilities = {
             documentFormattingProvider = false,
           },
         },
-
         yamlls = {
           settings = {
             yaml = {
