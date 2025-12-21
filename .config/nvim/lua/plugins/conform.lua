@@ -34,6 +34,7 @@ return {
                 lua = { "stylua" },
                 fish = { "fish_indent" },
                 sh = { "shfmt" },
+                json = { "prettier" },
             },
         }
         return opts
