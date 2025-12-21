@@ -1,18 +1,20 @@
 return {
-    {
-        "folke/tokyonight.nvim",
-        config = function()
-            vim.cmd.colorscheme("tokyonight")
-        end,
-    },
-    {
-        "tjdevries/colorbuddy.nvim",
-    },
+    { "folke/tokyonight.nvim" },
+    { "tjdevries/colorbuddy.nvim" },
     {
         "tjdevries/gruvbuddy.nvim",
+        config = function()
+            vim.cmd.colorscheme("gruvbuddy")
+        end,
     },
     { "rose-pine/neovim" },
+    { "Mofiqul/dracula.nvim" },
     {
-        "Mofiqul/dracula.nvim",
+        "navarasu/onedark.nvim",
+        config = function()
+            require("onedark").setup({
+                style = "darker",
+            })
+        end,
     },
 }

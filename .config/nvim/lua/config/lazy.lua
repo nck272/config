@@ -18,6 +18,7 @@ require("lazy").setup({
     spec = {
         { "LazyVim/LazyVim", import = "lazyvim.plugins" },
         { import = "plugins" },
+        { "folke/noice.nvim", enabled = false },
     },
     defaults = {
         lazy = false,

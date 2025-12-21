@@ -12,6 +12,12 @@ return {
                 lsp_format = "fallback", -- not recommended to change
             },
             formatters = {
+                ["clang-format"] = {
+                    prepend_args = {
+                        "--style",
+                        "{BasedOnStyle: LLVM, IndentWidth: 4, BreakBeforeBraces: Custom, BraceWrapping: {AfterFunction: true}}",
+                    },
+                },
                 stylua = {
                     prepend_args = function(_, ctx)
                         return { "--indent-width", vim.bo[ctx.buf].shiftwidth, "--indent-type", "Spaces" }
@@ -24,6 +30,7 @@ return {
                 },
             },
             formatters_by_ft = {
+                c = { "clang-format" },
                 lua = { "stylua" },
                 fish = { "fish_indent" },
                 sh = { "shfmt" },
