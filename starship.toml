@@ -1,0 +1,3 @@
+[git_status]
+# Change '⇡' to '⇡ ' (add a space at the end)
+ahead = '⇡  '
