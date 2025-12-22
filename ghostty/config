@@ -1,0 +1,10 @@
+font-family = "Ioskeley Mono"
+font-size = 12
+
+window-decoration = none
+
+theme = "Gruvbox Dark"
+
+background = #111111
+foreground = #E0E0E0
+cursor-color = #E0E0E0
