@@ -1,3 +1,2 @@
 [git_status]
-# Change '⇡' to '⇡ ' (add a space at the end)
-ahead = '⇡  '
+ahead = '⇡ ' # Some font display the arrow more to the right
