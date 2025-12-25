@@ -14,8 +14,7 @@ return {
             formatters = {
                 ["clang-format"] = {
                     prepend_args = {
-                        "--style",
-                        "{BasedOnStyle: LLVM, IndentWidth: 4, BreakBeforeBraces: Custom, BraceWrapping: {AfterFunction: true}}",
+                        "--style={BasedOnStyle: LLVM, IndentWidth: 4, BreakBeforeBraces: Custom, ColumnLimit: 120}",
                     },
                 },
                 stylua = {
@@ -31,10 +30,12 @@ return {
             },
             formatters_by_ft = {
                 c = { "clang-format" },
-                lua = { "stylua" },
-                fish = { "fish_indent" },
                 sh = { "shfmt" },
+                lua = { "stylua" },
+                vue = { "prettier" },
+                xml = { "xmlformatter" },
                 json = { "prettier" },
+                java = { "clang-format" },
             },
         }
         return opts

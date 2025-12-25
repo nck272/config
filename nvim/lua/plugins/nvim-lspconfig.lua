@@ -34,9 +34,34 @@ return {
             servers = {
                 ["*"] = {
                     gopls = { enabled = true },
+                    jdtls = { enabled = true },
+                    ts_ls = { enabled = false },
+                    vtsls = {
+                        filetypes = "vue",
+                        settings = {
+                            vtsls = {
+                                tsserver = {
+                                    globalPlugins = {
+                                        {
+                                            name = "@vue/typescript-plugin",
+                                            location = LazyVim.get_pkg_path(
+                                                "vue-language-server",
+                                                "/node_modules/@vue/language-server"
+                                            ),
+                                            languages = { "vue" },
+                                            configNamespace = "typescript",
+                                            enableForWorkspaceTypeScriptVersions = true,
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    vue_ls = { enabled = true },
                     lua_ls = { enabled = true },
                     clangd = { enabled = true },
                     pyright = { enabled = true },
+                    tsserver = { enabled = false },
                     keys = {
                         {
                             "<leader>cl",
